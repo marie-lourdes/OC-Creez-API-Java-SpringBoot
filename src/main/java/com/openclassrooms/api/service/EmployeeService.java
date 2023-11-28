@@ -27,7 +27,7 @@ public class EmployeeService {
     public void deleteEmployee(final Long id) {
         employeeRepository.deleteById(id);
     }
-
+//la méthode d interface Crudrepository save() sera utilisé pour les methode POST et UPDATE
     public Employee saveEmployee(Employee employee) {
         Employee savedEmployee = employeeRepository.save(employee);
         return savedEmployee;
