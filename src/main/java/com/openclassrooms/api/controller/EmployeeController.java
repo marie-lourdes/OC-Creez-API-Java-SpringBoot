@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.openclassrooms.api.model.Employee;
 import com.openclassrooms.api.service.EmployeeService;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 public class EmployeeController {
 
@@ -26,6 +28,7 @@ public class EmployeeController {
 	 * @param employee An object employee
 	 * @return The employee object saved
 	 */
+	 @ApiOperation(notes = "Operation post",value = "Creation d un employee")//swagger annoation pour la documentation de l api
 	@PostMapping("/employee")
 	public Employee createEmployee(@RequestBody Employee employee) {
 		return employeeService.saveEmployee(employee);
